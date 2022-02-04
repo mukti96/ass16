@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap');
+
+:root{
+    --shadow-1 : 0 .125rem .25rem rgba(0,0,0,.075);
+    --shadow-2 : 0 .5rem 1rem rgba(0,0,0,.15);
+    --shadow-3 : 0 1rem 3rem rgba(0,0,0,.175);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+html{
+    font-family: poppins;
+}
+
+a,
+a:hover{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+.banner::after{
+    content:"";
+    clear: both;
+    display: block;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://www.w3schools.com/w3css/img_lights.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner .banner-content{
+    width: 500px;
+    height: auto;
+    text-align: center;
+}
+.banner .banner-content h1{
+    font-size: 40px;
+    color: #fff;
+}
+.banner .banner-content p{
+    font-size: 20px;
+    color: #fff;
+}
+.banner .banner-content a{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: black;
+    margin-top: 20px;
+    border-radius: 4px;
+    box-shadow: var(--shadow-1);
+}
+
+/* modal css */
+.mm-modal{
+    position: fixed;
+    top: 0;
+    left:0;
+    background-color: rgba(255, 255, 255, .5);
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transform: translatey(-100px);
+    transition: all .3s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+.mm-modal.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translatey(0);
+}
+.mm-modal .modal-content{
+    background-color: #fff;
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow-3);
+}
+.mm-modal .modal-content .modal-header{
+    padding: 15px 20px;
+    border-bottom: 1px solid #e9e9e9;
+    display: flex;
+    justify-content: space-between;
+}
+.mm-modal .modal-content .modal-body{
+    padding: 15px 20px;
+}
+.mm-modal .modal-content .modal-footer{
+    padding: 15px 20px;
+    border-top: 1px solid #e9e9e9;
+}
+
+/* cusom alert */
+.mm-alert{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.mm-alert .alert-content{
+    width: 548px;
+    background-color: #fff;
+    box-shadow: var(--shadow-3);
+}
+.mm-alert .alert-content .alert-header{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e9e9e9;
+}
+.mm-alert .alert-content .alert-header .close{
+    background-color: #e5e5e5;
+    border: none;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.mm-alert .alert-content .alert-body {
+    padding: 10px 15px;
+}
+.mm-alert .alert-content .alert-body .btns {
+    text-align: right;
+    margin-top: 20px;
+}
+.mm-alert .alert-content .alert-body .btns a{
+    display: inline-block;
+    padding: 6px 22px;
+    font-size: 14px;
+    border-radius: 8px;
+}
+.mm-alert .alert-content .alert-body .btns a:nth-child(1){
+    color: #1E6ED8;
+}
+.mm-alert .alert-content .alert-body .btns a:nth-child(2){
+    background-color: #1E6ED8;
+    color: #fff;
+}
+
+
+/* banner2 */
+.banner2{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0, 255, 136);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner2::after{
+    content:"";
+    clear: both;
+    display: block;
+}
+.mm-accordion{
+    width: 600px;
+}
+.mm-accordion .accordion-item {
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-1);
+}
+.mm-accordion .accordion-item .accordion-header{
+    padding: 15px 20px;
+    border-bottom: 1px solid #e9e9e9;
+    cursor: pointer;
+}
+.mm-accordion .accordion-item .accordion-header::before {
+    content: "\f078";
+    font-weight: bold;
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    right: 33%;
+    /* bottom: -35%; */
+    transition: .3s;
+}
+.mm-accordion .accordion-item .accordion-body{
+    height: 0;
+    overflow: hidden;
+    transition: .3s;
+}
+.mm-accordion .accordion-item .accordion-body .accordion-content{
+    padding: 15px 20px;
+}
+.mm-accordion .accordion-item .accordion-header.active::before {
+    transform: rotate(180deg);
+}
+
+
